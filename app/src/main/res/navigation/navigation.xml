@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.midterm.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.midterm.register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.midterm.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_viewPathFragment"
+            app:destination="@id/viewPathFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_createPathFragment"
+            app:destination="@id/createPathFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPathFragment"
+        android:name="com.example.midterm.datagrid.ViewPathFragment"
+        android:label="fragment_view_path"
+        tools:layout="@layout/fragment_view_path" />
+    <fragment
+        android:id="@+id/createPathFragment"
+        android:name="com.example.midterm.datagrid.CreatePathFragment"
+        android:label="fragment_create_path"
+        tools:layout="@layout/fragment_create_path" >
+        <action
+            android:id="@+id/action_createPathFragment_to_viewPathFragment"
+            app:destination="@id/viewPathFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.example.midterm.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.midterm.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>
