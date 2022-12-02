@@ -22,6 +22,7 @@
             android:layout_marginTop="56dp"
             android:text="PathFinder"
             android:textSize="30sp"
+            android:textAppearance="@style/TextAppearance.Pathfinder.Title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,49 +40,66 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/entryUsername"
-            android:layout_width="355dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="32dp"
-            android:ems="10"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="44dp"
             android:hint="Type your username"
-            android:inputType="textPersonName"
-            android:text="@={loginViewModel.inputUsername}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/txtLogin">
 
-        <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="@={loginViewModel.inputUsername}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/entryPassword"
-            android:layout_width="355dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:hint="Type your password"
-            android:inputType="textPassword"
-            android:text="@={loginViewModel.inputPassword}"
+            app:errorEnabled="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/entryUsername" />
+            app:layout_constraintTop_toBottomOf="@+id/entryUsername">
 
-        <Button
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_edit_text"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:text="@={loginViewModel.inputPassword}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnReg"
+            style="@style/Widget.Pathfinder.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:text="Register"
             app:layout_constraintEnd_toStartOf="@+id/btnLogin"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/entryPassword"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/entryPassword"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogin"
+            style="@style/Widget.Pathfinder.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
             android:text="Login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btnReg"
