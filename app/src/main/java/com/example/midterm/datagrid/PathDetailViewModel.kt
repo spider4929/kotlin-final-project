@@ -15,7 +15,10 @@ class PathDetailViewModel(
     private val path: LiveData<Path>
 
     fun getPath() = path
-
+//    val getPathFrom: String
+//        get() = path.value!!.source
+//    val getPathTo: String
+//        get() = path.value!!.destination
     init {
         path= database.getOnePath(pathKey)
     }
