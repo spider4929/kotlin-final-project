@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.midterm.MapResponse
@@ -18,6 +19,7 @@ import com.example.midterm.MapService
 import com.example.midterm.R
 import com.example.midterm.database.PathDatabase
 import com.example.midterm.databinding.FragmentPathDetailBinding
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -60,8 +62,8 @@ class PathDetailFragment : Fragment() {
 
         var BaseUrl = "https://www.mapquestapi.com/"
         var key = "utydmlZb3HL2uQ8DZasJ70h0hdSGIcC5"
-        var from = (binding.pathDest.text.toString())
-        var to = (binding.pathSrc.text.toString())
+        val from = ""
+        var to = ""
 
         fun getCurrentData() {
             val retrofit = Retrofit.Builder()
@@ -87,7 +89,9 @@ class PathDetailFragment : Fragment() {
                 }
             })
         }
-        getCurrentData()
+        binding.LoadButton.setOnClickListener{
+            getCurrentData()
+        }
         return binding.root
     }
 }
