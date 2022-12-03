@@ -70,7 +70,7 @@ class ViewPathFragment : Fragment() {
             }
         })
 
-        val manager = GridLayoutManager(activity, 3)
+        val manager = GridLayoutManager(activity, 1)
         binding.pathList.layoutManager = manager
 
         return binding.root
