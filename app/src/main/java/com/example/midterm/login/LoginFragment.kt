@@ -40,6 +40,7 @@ class LoginFragment : Fragment() {
             view.findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
         }
 
+
         loginViewModel.navigateToHome.observe(viewLifecycleOwner, Observer {
             this.findNavController().navigate(
                 R.id.action_loginFragment_to_homeFragment)
