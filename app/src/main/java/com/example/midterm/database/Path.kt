@@ -12,7 +12,13 @@ data class Path (
     @ColumnInfo(name = "title")
     var title: String,
 
+    @ColumnInfo(name = "source")
+    var source: String,
+
+    @ColumnInfo(name = "destination")
+    var destination: String,
+
     @ColumnInfo(name = "description")
-    var description: String,
+    var description: String
 
     )

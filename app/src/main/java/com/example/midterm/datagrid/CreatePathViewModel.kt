@@ -15,7 +15,8 @@ class CreatePathViewModel(val database: PathDatabaseDao,
                           application: Application) : AndroidViewModel(application) {
 
     val inputTitle = MutableLiveData<String>()
-
+    val inputSource = MutableLiveData<String>()
+    val inputDestination = MutableLiveData<String>()
     val inputDesc = MutableLiveData<String>()
 
     val _navigateToViewPath = MutableLiveData<Boolean>()
@@ -31,9 +32,13 @@ class CreatePathViewModel(val database: PathDatabaseDao,
     fun createPathButton() {
         CoroutineScope(Dispatchers.IO).launch {
             val title = inputTitle.value!!
+            val source = inputSource.value!!
+            val destination = inputDestination.value!!
             val desc = inputDesc.value!!
-            database.insert(Path(0,title,desc))
+            database.insert(Path(0,title,source,destination,desc))
             inputTitle.postValue("")
+            inputSource.postValue("")
+            inputDestination.postValue("")
             inputDesc.postValue("")
             _navigateToViewPath.postValue(true)
         }

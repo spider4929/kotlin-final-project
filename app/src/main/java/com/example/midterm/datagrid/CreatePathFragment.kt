@@ -43,6 +43,10 @@ class CreatePathFragment : Fragment() {
             createPathViewModel.doneNavigating()
         })
 
+        binding.createPathViewModel = createPathViewModel
+
+        binding.setLifecycleOwner(this)
+
         return binding.root
     }
 }
