@@ -14,7 +14,7 @@
             style="@style/Widget.Pathfinder.Toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Pathfinder"/>
+            app:title="FINAL PROJECT"/>
 
             <fragment
                 android:id="@+id/myNavHostFragment"
