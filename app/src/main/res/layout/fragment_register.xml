@@ -19,11 +19,12 @@
             android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="40dp"
             android:text="PathFinder"
+            android:textAppearance="@style/TextAppearance.Pathfinder.Title"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +32,7 @@
             android:id="@+id/txtRegister"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="20dp"
             android:text="Register"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -39,55 +40,86 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
-        <EditText
-            android:id="@+id/entryName"
-            android:layout_width="355dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="36dp"
-            android:ems="10"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameLayout"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="44dp"
             android:hint="Type your name"
-            android:inputType="textPersonName"
-            android:text="@={registerViewModel.inputName}"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtRegister" />
+            app:layout_constraintTop_toBottomOf="@+id/txtRegister">
 
-        <EditText
-            android:id="@+id/entryUsername"
-            android:layout_width="355dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="36dp"
-            android:ems="10"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/entryName"
+            android:layout_width="336dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            android:text="@={registerViewModel.inputName}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/usernameLayout"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="44dp"
             android:hint="Type your username"
-            android:inputType="textPersonName"
-            android:text="@={registerViewModel.inputUsername}"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/entryName" />
+            app:layout_constraintTop_toBottomOf="@+id/nameLayout">
 
-        <EditText
-            android:id="@+id/entryPassword"
-            android:layout_width="355dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="36dp"
-            android:ems="10"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entryUsername"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:text="@={registerViewModel.inputUsername}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordLayout"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="44dp"
             android:hint="Type your password"
-            android:inputType="textPassword"
-            android:text="@={registerViewModel.inputPassword}"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/entryUsername" />
+            app:layout_constraintTop_toBottomOf="@+id/usernameLayout" >
 
-        <Button
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entryPassword"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:text="@={registerViewModel.inputPassword}"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRegister"
+            style="@style/Widget.Pathfinder.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="28dp"
+            android:onClick="@{()->registerViewModel.registerButton()}"
             android:text="Register"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/entryPassword"
-            android:onClick="@{()->registerViewModel.registerButton()}"/>
+            app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

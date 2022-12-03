@@ -28,7 +28,7 @@
 
     <style name="Widget.Pathfinder.Button" parent="Widget.MaterialComponents.Button">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
-        <item name="backgroundTint">?attr/colorPrimary</item>
+        <item name="backgroundTint">?attr/colorAccent</item>
     </style>
 
     <style name="Widget.Pathfinder.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
