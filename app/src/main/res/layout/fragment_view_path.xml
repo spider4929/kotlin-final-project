@@ -28,14 +28,25 @@
             style="@style/Widget.Pathfinder.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:text="Clear Paths"
+            android:layout_marginStart="44dp"
+            android:layout_marginBottom="24dp"
             android:enabled="@{viewPathViewModel.clearButtonVisible}"
             android:onClick="@{() -> viewPathViewModel.onClear()}"
+            android:text="Clear Paths"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/btnviewexit"
+            style="@style/Widget.Pathfinder.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintHorizontal_bias="0.51"
+            app:layout_constraintStart_toEndOf="@+id/clear_button" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

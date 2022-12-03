@@ -74,6 +74,18 @@
 
                  />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/homeexit"
+                style="@style/Widget.Pathfinder.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="Log Out"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnViewAdd" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 <!--        <com.google.android.material.navigation.NavigationView-->
