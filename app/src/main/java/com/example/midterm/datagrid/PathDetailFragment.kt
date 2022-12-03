@@ -23,41 +23,10 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import kotlin.math.roundToInt
 
 class PathDetailFragment : Fragment() {
     private var mapData: TextView? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_path_detail)
-
-        mapData = findViewById(R.id.path_string)
-        getCurrentData()
-    }
-
-    private fun getCurrentData() {
-        val retrofit = Retrofit.Builder()
-            .baseUrl(BaseUrl)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-        val service = retrofit.create(MapService::class.java)
-        val call = service.getCurrentMapData(from, to, key)
-        call.enqueue(object: Callback<MapResponse> {
-            override fun onResponse(call: Call<MapResponse>, response: Response<MapResponse>) {
-                if (response.code() == 200) {
-                    val mapResponse = response.body()!!
-
-                    val stringBuilder = "Distance: " + mapResponse.route!!.distance +
-                            "\n" +
-                            "Estimated Time of Arrival: " + mapResponse.route!!.time
-
-                    mapData!!.text = stringBuilder
-                }
-            }
-            override fun onFailure(call: Call<MapResponse>, t: Throwable) {
-                mapData!!.text = t.message
-            }
-            })
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -87,14 +56,38 @@ class PathDetailFragment : Fragment() {
         })
 //        source = pathDetailViewModel.getPathFrom
 //        destination = pathDetailViewModel.getPathTo
-        return binding.root
-    }
+        mapData = binding.pathString
 
-    companion object {
         var BaseUrl = "https://www.mapquestapi.com/"
         var key = "utydmlZb3HL2uQ8DZasJ70h0hdSGIcC5"
-        var from = "Mandaluyong"
-        var to = "San Juan, NCR"
+        var from = (binding.pathDest.text.toString())
+        var to = (binding.pathSrc.text.toString())
 
+        fun getCurrentData() {
+            val retrofit = Retrofit.Builder()
+                .baseUrl(BaseUrl)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+            val service = retrofit.create(MapService::class.java)
+            val call = service.getCurrentMapData(from, to, key)
+            call.enqueue(object: Callback<MapResponse> {
+                override fun onResponse(call: Call<MapResponse>, response: Response<MapResponse>) {
+                    if (response.code() == 200) {
+                        val mapResponse = response.body()!!
+
+                        val stringBuilder = "Distance: " + String.format("%.2f",(mapResponse.route!!.distance*1.61)) +
+                                " km\n\n" +
+                                "Estimated Time of Arrival: " + (mapResponse.route!!.time*5)/60 + " minutes"
+
+                        mapData!!.text = stringBuilder
+                    }
+                }
+                override fun onFailure(call: Call<MapResponse>, t: Throwable) {
+                    mapData!!.text = t.message
+                }
+            })
+        }
+        getCurrentData()
+        return binding.root
     }
 }

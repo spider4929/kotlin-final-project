@@ -9,7 +9,7 @@ import com.example.midterm.database.Path
 @BindingAdapter("pathDetailString")
 fun TextView.setPathDetailString(item: Path?) {
     item?.let{
-        text = item.description
+        text = "Loading data..."
     }
 }
 
@@ -20,16 +20,30 @@ fun TextView.setPathString(item: Path?) {
     }
 }
 
-@BindingAdapter("pathSrcDestString")
-fun TextView.setPathSrcDestString(item: Path?) {
-    item?.let{
-        text = "From ${item.source} to ${item.destination}"
-    }
-}
-
 @BindingAdapter("mapImage")
 fun ImageView.setMapImage(item: Path?){
     item?.let {
         setImageResource(R.drawable.map_icon)
+    }
+}
+
+@BindingAdapter("pathSrcDestString")
+fun TextView.setPathSrcDestString(item: Path?) {
+    item?.let {
+        text = "From ${item.source} to ${item.destination}"
+    }
+}
+
+@BindingAdapter("pathSrcString")
+fun TextView.setPathSrcString(item: Path?) {
+    item?.let {
+        text = item.source
+    }
+}
+
+@BindingAdapter("pathDestString")
+fun TextView.setPathDestString(item: Path?) {
+    item?.let {
+        text = item.destination
     }
 }
