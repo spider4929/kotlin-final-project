@@ -19,7 +19,8 @@ class HomeFragment : Fragment() {
             container,
             false
         )
-
+        binding.homeexit.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_homeFragment_to_loginFragment) }
         binding.btnAddPath.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_createPathFragment)
         }

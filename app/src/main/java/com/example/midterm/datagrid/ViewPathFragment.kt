@@ -9,6 +9,7 @@ import android.widget.GridLayout
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.midterm.R
@@ -25,6 +26,9 @@ class ViewPathFragment : Fragment() {
         val binding: FragmentViewPathBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_view_path, container, false
         )
+
+        binding.btnviewexit.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_viewPathFragment_to_homeFragment) }
 
         val application = requireNotNull(this.activity).application
 

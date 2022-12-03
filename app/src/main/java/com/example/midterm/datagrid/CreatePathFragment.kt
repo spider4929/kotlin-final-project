@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.midterm.R
 import com.example.midterm.database.PathDatabase
@@ -25,6 +26,8 @@ class CreatePathFragment : Fragment() {
             container,
             false
         )
+        binding.btnaddexit.setOnClickListener { view : View ->
+            view.findNavController().navigate(R.id.action_createPathFragment_to_homeFragment) }
 
         val application = requireNotNull(this.activity).application
 
