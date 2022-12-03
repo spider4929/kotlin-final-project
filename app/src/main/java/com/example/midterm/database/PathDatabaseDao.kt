@@ -12,9 +12,11 @@ interface PathDatabaseDao {
     fun insert(path: Path)
 
     @Query("SELECT * FROM path_table WHERE pathId = :key")
-    fun getOnePath(key: Long): Path
+    fun getOnePath(key: Long): LiveData<Path>
 
     @Query("SELECT * FROM path_table ORDER BY pathId DESC")
     fun getAllPath(): LiveData<List<Path>>
 
+    @Query("DELETE FROM path_table")
+    suspend fun clear()
 }

@@ -42,7 +42,11 @@
         android:id="@+id/viewPathFragment"
         android:name="com.example.midterm.datagrid.ViewPathFragment"
         android:label="fragment_view_path"
-        tools:layout="@layout/fragment_view_path" />
+        tools:layout="@layout/fragment_view_path" >
+        <action
+            android:id="@+id/action_viewPathFragment_to_pathDetailFragment"
+            app:destination="@id/pathDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/createPathFragment"
         android:name="com.example.midterm.datagrid.CreatePathFragment"
@@ -62,4 +66,15 @@
         android:name="com.example.midterm.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/pathDetailFragment"
+        android:name="com.example.midterm.datagrid.PathDetailFragment"
+        android:label="PathDetailFragment" >
+        <action
+            android:id="@+id/action_pathDetailFragment_to_viewPathFragment"
+            app:destination="@id/viewPathFragment" />
+        <argument
+            android:name="pathKey"
+            app:argType="long" />
+    </fragment>
 </navigation>
