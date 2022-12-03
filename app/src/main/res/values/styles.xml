@@ -22,6 +22,17 @@
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>
 
+    <style name="TextAppearance.Pathfinder.Subtitle" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+    <style name="TextAppearance.Pathfinder.TextBody" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+
+
     <style name="TextAppearance.Pathfinder.TextInputLayout.HintText" parent="TextAppearance.MaterialComponents.Subtitle2">
         <item name="android:textColor">?android:attr/textColorPrimary</item>
     </style>

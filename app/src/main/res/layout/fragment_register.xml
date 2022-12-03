@@ -35,6 +35,7 @@
             android:layout_marginTop="20dp"
             android:text="Register"
             android:textSize="20sp"
+            android:textAppearance="@style/TextAppearance.Pathfinder.Subtitle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"

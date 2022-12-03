@@ -19,11 +19,12 @@
             android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="32dp"
             android:text="PathFinder"
+            android:textAppearance="@style/TextAppearance.Pathfinder.Title"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,80 +32,114 @@
             android:id="@+id/addPath"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="56dp"
+            android:layout_marginTop="28dp"
             android:text="Add Path"
+            android:textAppearance="@style/TextAppearance.Pathfinder.Subtitle"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
-        <EditText
-            android:id="@+id/entryTitle"
-            android:layout_width="355dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="32dp"
-            android:ems="10"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/entryTitle_Layout"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
             android:hint="Type path title"
-            android:inputType="text"
-            android:text="@={createPathViewModel.inputTitle}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addPath" />
+            app:layout_constraintTop_toBottomOf="@+id/addPath">
 
-        <EditText
-            android:id="@+id/entrySource"
-            android:layout_width="355dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="32dp"
-            android:ems="10"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entryTitle"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="@={createPathViewModel.inputTitle}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/entrySource_Layout"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
             android:hint="Type path starting point"
-            android:inputType="text"
-            android:text="@={createPathViewModel.inputSource}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/entryTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/entryTitle_Layout">
 
-        <EditText
-            android:id="@+id/entryDestination"
-            android:layout_width="355dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="32dp"
-            android:ems="10"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entrySource"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="@={createPathViewModel.inputSource}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/entryDestination_Layout"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="12dp"
             android:hint="Type path ending point"
-            android:inputType="text"
-            android:text="@={createPathViewModel.inputDestination}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/entrySource" />
+            app:layout_constraintTop_toBottomOf="@+id/entrySource_Layout">
 
-        <EditText
-            android:id="@+id/entryDesc"
-            android:layout_width="355dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entryDestination"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="@={createPathViewModel.inputDestination}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/entryDesc_Layout"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
             android:hint="Type path description"
-            android:inputType="textMultiLine"
-            android:text="@={createPathViewModel.inputDesc}"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/entryDestination" />
+            app:layout_constraintTop_toBottomOf="@+id/entryDestination_Layout">
 
-        <Button
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entryDesc"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:text="@={createPathViewModel.inputDesc}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddPath"
+            style="@style/Widget.Pathfinder.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="16dp"
+            android:onClick="@{()->createPathViewModel.createPathButton()}"
             android:text="Add"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/entryDesc"
-            android:onClick="@{()->createPathViewModel.createPathButton()}"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/entryDesc_Layout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

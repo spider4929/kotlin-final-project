@@ -5,12 +5,6 @@
     tools:context="com.example.midterm.HomeFragment">
 
 
-
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawerLayout"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent">
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/homeConstraint"
             android:layout_width="match_parent"
@@ -23,6 +17,7 @@
                 android:layout_marginTop="32dp"
                 android:text="Welcome to PathFinder!"
                 android:textSize="20sp"
+                android:textAppearance="@style/TextAppearance.Pathfinder.Title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.497"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,46 +35,53 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="337dp"
-                android:layout_height="86dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="PathFinder is a human 'Waze' that gives to the user the best possible route based on a set of safety factors. The app aims to promote foot travel by giving the user a path that they can walk on without much hassle and where they can feel safe."
+                android:textAppearance="@style/TextAppearance.Pathfinder.TextBody"
+                android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnAddPath"
+                style="@style/Widget.Pathfinder.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="28dp"
                 android:text="Add Path"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnViewAdd"
+                style="@style/Widget.Pathfinder.Button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="28dp"
                 android:text="View Path"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.501"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnAddPath" />
+                app:layout_constraintTop_toBottomOf="@+id/btnAddPath"
+
+                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <com.google.android.material.navigation.NavigationView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/navView"
-            android:layout_gravity="start"
-            app:headerLayout="@layout/nav_header"
-            app:menu="@menu/nav_drawer"/>
-
-    </androidx.drawerlayout.widget.DrawerLayout>
+<!--        <com.google.android.material.navigation.NavigationView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:id="@+id/navView"-->
+<!--            android:layout_gravity="start"-->
+<!--            app:headerLayout="@layout/nav_header"-->
+<!--            app:menu="@menu/nav_drawer"/>-->
 
 </layout>
