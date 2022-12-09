@@ -37,7 +37,7 @@
             app:layout_constraintBottom_toTopOf="@id/path_string"
             app:layout_constraintStart_toEndOf="@id/path_src"
             app:layout_constraintTop_toTopOf="parent"
-            app:pathDestString="@{pathDetailViewModel.path}"
+            app:pathDestString="@{pathDetailViewModel.path.source}"
             tools:text="Destination" />
 
         <TextView
