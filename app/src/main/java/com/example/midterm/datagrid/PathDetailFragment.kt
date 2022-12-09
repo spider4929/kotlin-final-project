@@ -23,7 +23,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import kotlin.math.roundToInt
+import android.util.Log
 
 class PathDetailFragment : Fragment() {
     private var mapData: TextView? = null
@@ -62,6 +62,8 @@ class PathDetailFragment : Fragment() {
         var key = "utydmlZb3HL2uQ8DZasJ70h0hdSGIcC5"
         var from = (binding.pathDest.text.toString())
         var to = (binding.pathSrc.text.toString())
+        Log.d("VAL", binding.pathDest.toString())
+        Log.d("VAL", binding.pathSrc.toString())
 
         fun getCurrentData() {
             val retrofit = Retrofit.Builder()

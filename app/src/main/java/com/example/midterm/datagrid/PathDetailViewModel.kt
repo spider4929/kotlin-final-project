@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.midterm.database.Path
 import com.example.midterm.database.PathDatabaseDao
+import android.util.Log
 
 class PathDetailViewModel(
         private val pathKey: Long = 0L,
