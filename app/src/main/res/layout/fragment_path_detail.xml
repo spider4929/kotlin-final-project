@@ -2,9 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <!-- Data to make available to the XML via data binding. In this case,
- the whole ViewModel, so that we can access the LiveData,
- click handlers, and state variables. -->
+
     <data>
         <variable
             name="pathDetailViewModel"
@@ -16,13 +14,37 @@
         android:layout_height="match_parent"
         tools:context=".datagrid.PathDetailFragment">
 
-        <TextView
-            android:id="@+id/path_src"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ReturnButton"
+            style="@style/Widget.Pathfinder.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginStart="63dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="31dp"
+            android:layout_marginBottom="265dp"
+            android:onClick="@{() -> pathDetailViewModel.onClose()}"
+            android:text="Return"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/LoadButton"
+            app:layout_constraintTop_toBottomOf="@+id/path_string"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/path_src"
+            android:layout_width="411dp"
+            android:layout_height="26dp"
+            android:layout_marginTop="154dp"
+            android:layout_marginBottom="22dp"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.Pathfinder.Subtitle"
-            app:layout_constraintBottom_toTopOf="@+id/path_string"
+            app:layout_constraintBottom_toTopOf="@+id/path_dest"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:pathSrcString="@{pathDetailViewModel.path}"
@@ -30,32 +52,50 @@
 
         <TextView
             android:id="@+id/path_dest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
+            android:layout_width="411dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="28dp"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.Pathfinder.Subtitle"
-            app:layout_constraintBottom_toTopOf="@id/path_string"
-            app:layout_constraintStart_toEndOf="@id/path_src"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/path_src"
             app:pathDestString="@{pathDetailViewModel.path}"
             tools:text="Destination" />
 
         <TextView
-            android:id="@+id/path_string"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:id="@+id/path_description"
+            android:layout_width="352dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="31dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:textAlignment="center"
+            android:layout_marginEnd="28dp"
             android:gravity="center"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.Pathfinder.TextBody"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/path_dest"
+            app:pathDescriptionString="@{pathDetailViewModel.path}"
+            tools:text="Sample Description" />
+
+        <TextView
+            android:id="@+id/path_string"
+            android:layout_width="349dp"
+            android:layout_height="124dp"
+            android:layout_marginStart="34dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="28dp"
+            android:gravity="center"
+            android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.Pathfinder.TextBody"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/ReturnButton"
+            app:layout_constraintTop_toBottomOf="@+id/path_description"
             app:pathDetailString="@{pathDetailViewModel.path}"
-            tools:text="Sample Text"/>
+            tools:text="Sample Text" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/LoadButton"
@@ -64,26 +104,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="28dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="265dp"
             android:text="Query API for Data"
-            app:layout_constraintBottom_toTopOf="@+id/ReturnButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/path_string" />
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/ReturnButton"
-            style="@style/Widget.Pathfinder.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="28dp"
-            android:onClick="@{() -> pathDetailViewModel.onClose()}"
-            android:text="Return"
-
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/path_string"
+            app:layout_constraintVertical_bias="0.0" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

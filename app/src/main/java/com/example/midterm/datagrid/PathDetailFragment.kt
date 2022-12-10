@@ -1,7 +1,9 @@
 package com.example.midterm.datagrid
 
+import android.content.ContentValues.TAG
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -60,34 +62,42 @@ class PathDetailFragment : Fragment() {
 
         var BaseUrl = "https://www.mapquestapi.com/"
         var key = "utydmlZb3HL2uQ8DZasJ70h0hdSGIcC5"
-        var from = (binding.pathDest.text.toString())
-        var to = (binding.pathSrc.text.toString())
+        fun getCurrentData(){
+                val path = pathDetailViewModel.getPath()
+                val pathValue = path.value
+                Log.i("RICK","$pathValue")
+                if (pathValue != null) {
+                    var from = pathValue.source
+                    var to = pathValue.destination
+                    Log.i("RICK", from)
+                    Log.i("RICK", to)
+                    val retrofit = Retrofit.Builder()
+                        .baseUrl(BaseUrl)
+                        .addConverterFactory(GsonConverterFactory.create())
+                        .build()
+                    val service = retrofit.create(MapService::class.java)
+                    val call = service.getCurrentMapData(from, to, key)
+                    call.enqueue(object: Callback<MapResponse> {
+                        override fun onResponse(call: Call<MapResponse>, response: Response<MapResponse>) {
+                            if (response.code() == 200) {
+                                val mapResponse = response.body()!!
 
-        fun getCurrentData() {
-            val retrofit = Retrofit.Builder()
-                .baseUrl(BaseUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-            val service = retrofit.create(MapService::class.java)
-            val call = service.getCurrentMapData(from, to, key)
-            call.enqueue(object: Callback<MapResponse> {
-                override fun onResponse(call: Call<MapResponse>, response: Response<MapResponse>) {
-                    if (response.code() == 200) {
-                        val mapResponse = response.body()!!
+                                val stringBuilder = "Distance: " + String.format("%.2f",(mapResponse.route!!.distance*1.61)) +
+                                        " km\n\n" +
+                                        "Estimated Time of Arrival: " + (mapResponse.route!!.time*5)/60 + " minutes"
 
-                        val stringBuilder = "Distance: " + String.format("%.2f",(mapResponse.route!!.distance*1.61)) +
-                                " km\n\n" +
-                                "Estimated Time of Arrival: " + (mapResponse.route!!.time*5)/60 + " minutes"
-
-                        mapData!!.text = stringBuilder
-                    }
+                                mapData!!.text = stringBuilder
+                            }
+                        }
+                        override fun onFailure(call: Call<MapResponse>, t: Throwable) {
+                            mapData!!.text = t.message
+                        }
+                    })
                 }
-                override fun onFailure(call: Call<MapResponse>, t: Throwable) {
-                    mapData!!.text = t.message
-                }
-            })
+            }
+        binding.LoadButton.setOnClickListener{
+            getCurrentData()
         }
-        getCurrentData()
         return binding.root
     }
 }

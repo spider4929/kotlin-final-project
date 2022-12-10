@@ -9,7 +9,7 @@ import com.example.midterm.database.Path
 @BindingAdapter("pathDetailString")
 fun TextView.setPathDetailString(item: Path?) {
     item?.let{
-        text = "Loading data..."
+        text = "Click Button to Query Data"
     }
 }
 
@@ -37,13 +37,20 @@ fun TextView.setPathSrcDestString(item: Path?) {
 @BindingAdapter("pathSrcString")
 fun TextView.setPathSrcString(item: Path?) {
     item?.let {
-        text = item.source
+        text = "FROM: " + item.source
     }
 }
 
 @BindingAdapter("pathDestString")
 fun TextView.setPathDestString(item: Path?) {
     item?.let {
-        text = item.destination
+        text = "TO: " + item.destination
+    }
+}
+
+@BindingAdapter("pathDescriptionString")
+fun TextView.setpathDescriptionString(item: Path?) {
+    item?.let {
+        text = "Description: " + item.description
     }
 }
