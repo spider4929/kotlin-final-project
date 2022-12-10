@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.midterm.R
 import com.example.midterm.database.PathDatabase
 import com.example.midterm.databinding.FragmentCreatePathBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class CreatePathFragment : Fragment() {
     override fun onCreateView(
@@ -39,12 +40,12 @@ class CreatePathFragment : Fragment() {
             ViewModelProvider(
                 this, viewModelFactory).get(CreatePathViewModel::class.java)
 
-        createPathViewModel.navigateToViewPath.observe(viewLifecycleOwner, Observer {
-            this.findNavController().navigate(
-                R.id.action_createPathFragment_to_viewPathFragment
-            )
-            createPathViewModel.doneNavigating()
-        })
+//        createPathViewModel.navigateToViewPath.observe(viewLifecycleOwner, Observer {
+//            this.findNavController().navigate(
+//                R.id.action_createPathFragment_to_viewPathFragment
+//            )
+//            createPathViewModel.doneNavigating()
+//        })
 
         binding.createPathViewModel = createPathViewModel
 
@@ -52,4 +53,13 @@ class CreatePathFragment : Fragment() {
 
         return binding.root
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        // Hide the bottom navigation view
+        val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView?.visibility = View.VISIBLE
+    }
+
 }

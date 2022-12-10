@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.midterm.R
 import com.example.midterm.database.PathDatabase
 import com.example.midterm.databinding.FragmentViewPathBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.snackbar.Snackbar
 
 class ViewPathFragment : Fragment() {
@@ -79,4 +80,13 @@ class ViewPathFragment : Fragment() {
 
         return binding.root
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        // Hide the bottom navigation view
+        val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView?.visibility = View.VISIBLE
+    }
+
 }

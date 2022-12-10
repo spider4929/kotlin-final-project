@@ -14,8 +14,11 @@ import androidx.navigation.fragment.findNavController
 import com.example.midterm.R
 import com.example.midterm.database.UserDatabase
 import com.example.midterm.databinding.FragmentRegisterBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class RegisterFragment : Fragment() {
+//    private lateinit var bottomNavigationView: BottomNavigationView
+
     @SuppressLint("FragmentLiveDataObserve")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -27,6 +30,10 @@ class RegisterFragment : Fragment() {
             container,
             false
         )
+
+//        bottomNavigationView = requireView().findViewById(R.id.bottom_navigation)
+//
+//        bottomNavigationView.visibility = View.GONE
 
         binding.button.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_registerFragment_to_loginFragment2)
@@ -55,4 +62,13 @@ class RegisterFragment : Fragment() {
 
             return binding.root
         }
+
+    override fun onResume() {
+        super.onResume()
+
+        // Hide the bottom navigation view
+        val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView?.visibility = View.GONE
     }
+
+}

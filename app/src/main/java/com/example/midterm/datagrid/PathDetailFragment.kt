@@ -20,6 +20,7 @@ import com.example.midterm.MapService
 import com.example.midterm.R
 import com.example.midterm.database.PathDatabase
 import com.example.midterm.databinding.FragmentPathDetailBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -100,4 +101,13 @@ class PathDetailFragment : Fragment() {
         }
         return binding.root
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        // Hide the bottom navigation view
+        val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView?.visibility = View.VISIBLE
+    }
+
 }
