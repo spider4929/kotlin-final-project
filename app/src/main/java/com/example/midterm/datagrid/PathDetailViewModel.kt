@@ -14,6 +14,7 @@ class PathDetailViewModel(
 
     private val path: LiveData<Path>
 
+    fun getPathKey() = pathKey
     fun getPath() = path
     init {
         path= database.getOnePath(pathKey)
@@ -23,12 +24,19 @@ class PathDetailViewModel(
     val navigateToViewPath: LiveData<Boolean?>
         get() = _navigateToViewPath
 
+    private val _navigateToEditPath = MutableLiveData<Boolean?>()
+    val navigateToEditPath: LiveData<Boolean?>
+        get() = _navigateToEditPath
+
     fun doneNavigating() {
         _navigateToViewPath.value = null
+        _navigateToEditPath.value = null
     }
 
     fun onClose() {
         _navigateToViewPath.value = true
     }
-
+    fun onEdit() {
+        _navigateToEditPath.value = true
+    }
 }

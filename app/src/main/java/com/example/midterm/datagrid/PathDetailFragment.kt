@@ -59,8 +59,15 @@ class PathDetailFragment : Fragment() {
                 pathDetailViewModel.doneNavigating()
             }
         })
-//        source = pathDetailViewModel.getPathFrom
-//        destination = pathDetailViewModel.getPathTo
+        pathDetailViewModel.navigateToEditPath.observe(viewLifecycleOwner, Observer {
+            if (it == true) {
+                val pathKey = pathDetailViewModel.getPathKey()
+                this.findNavController().navigate(
+                    PathDetailFragmentDirections.actionPathDetailFragmentToEditPathFragment(pathKey))
+                pathDetailViewModel.doneNavigating()
+            }
+        })
+
         mapData = binding.pathString
 
         var BaseUrl = "https://www.mapquestapi.com/"

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.midterm.datagrid.EditPathFragment">
+
+    <data>
+        <variable
+            name="editPathViewModel"
+            type="com.example.midterm.datagrid.EditPathViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/createConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/txtTitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="PathFinder"
+            android:textAppearance="@style/TextAppearance.Pathfinder.Title"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/editPath"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Edit Path"
+            android:textAppearance="@style/TextAppearance.Pathfinder.Subtitle"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitle2" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/entryTitle_Layout"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:hint="Type new path title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editPath">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entryTitle"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:text="@={editPathViewModel.inputTitle}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/entrySource_Layout"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="10dp"
+            android:hint="Type new path starting point"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/entryTitle_Layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entrySource"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="@={editPathViewModel.inputSource}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/entryDestination_Layout"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="10dp"
+            android:hint="Type new path ending point"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/entrySource_Layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entryDestination"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1"
+                android:text="@={editPathViewModel.inputDestination}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/entryDesc_Layout"
+            style="@style/Widget.Pathfinder.TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="10dp"
+            android:hint="Type new path description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/entryDestination_Layout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/entryDesc"
+                android:layout_width="336dp"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:text="@={editPathViewModel.inputDesc}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEditPath"
+            style="@style/Widget.Pathfinder.Button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:onClick="@{()->editPathViewModel.editPathButton()}"
+            android:text="Edit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/entryDesc_Layout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnaddexit"
+            style="@style/Widget.Pathfinder.Button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginTop="30dp"
+            android:text="Back"
+            android:onClick="@{()->editPathViewModel.onClose()}"
+            app:layout_constraintStart_toEndOf="@+id/btnEditPath"
+            app:layout_constraintTop_toBottomOf="@+id/entryDesc_Layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -94,5 +94,20 @@
         <argument
             android:name="pathKey"
             app:argType="long" />
+        <action
+            android:id="@+id/action_pathDetailFragment_to_editPathFragment"
+            app:destination="@id/editPathFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPathFragment"
+        android:name="com.example.midterm.datagrid.EditPathFragment"
+        android:label="fragment_edit_path"
+        tools:layout="@layout/fragment_edit_path" >
+        <argument
+            android:name="pathKey"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_editPathFragment_to_viewPathFragment"
+            app:destination="@id/viewPathFragment" />
     </fragment>
 </navigation>
