@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -15,6 +16,7 @@ import com.example.midterm.R
 import com.example.midterm.database.UserDatabase
 import com.example.midterm.databinding.FragmentRegisterBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 
 class RegisterFragment : Fragment() {
 //    private lateinit var bottomNavigationView: BottomNavigationView
@@ -69,6 +71,9 @@ class RegisterFragment : Fragment() {
         // Hide the bottom navigation view
         val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView?.visibility = View.GONE
+
+//        val toolbar = activity?.findViewById<Toolbar>(R.id.app_bar)
+//        toolbar?.visibility = View.GONE
     }
 
 }

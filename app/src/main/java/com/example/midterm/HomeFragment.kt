@@ -2,12 +2,14 @@ package com.example.midterm
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.midterm.databinding.FragmentHomeBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 
 class HomeFragment : Fragment() {
     override fun onCreateView(
@@ -30,8 +32,6 @@ class HomeFragment : Fragment() {
             view.findNavController().navigate(R.id.action_homeFragment_to_viewPathFragment)
         }
 
-
-
         setHasOptionsMenu(true)
         return binding.root
     }
@@ -52,5 +52,8 @@ class HomeFragment : Fragment() {
         // Hide the bottom navigation view
         val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView?.visibility = View.VISIBLE
+
+//        val toolbar = activity?.findViewById<Toolbar>(R.id.app_bar)
+//        toolbar?.visibility = View.VISIBLE
     }
 }

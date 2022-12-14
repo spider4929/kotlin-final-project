@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.midterm.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 
 class SettingsFragment : Fragment() {
     override fun onCreateView(
@@ -22,5 +23,8 @@ class SettingsFragment : Fragment() {
         // Hide the bottom navigation view
         val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView?.visibility = View.VISIBLE
+
+//        val navigationView = activity?.findViewById<NavigationView>(R.id.navView)
+//        navigationView?.visibility = View.VISIBLE
     }
 }
