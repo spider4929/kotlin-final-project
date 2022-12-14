@@ -1,11 +1,13 @@
 package com.example.midterm.login
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toolbar
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -13,8 +15,14 @@ import androidx.navigation.fragment.findNavController
 import com.example.midterm.R
 import com.example.midterm.database.UserDatabase
 import com.example.midterm.databinding.FragmentLoginBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.appcompat.app.AppCompatActivity
+import com.example.midterm.MainActivity
+
 
 class LoginFragment : Fragment() {
+    private lateinit var bottomNavigationView: BottomNavigationView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -25,6 +33,10 @@ class LoginFragment : Fragment() {
             container,
             false
         )
+
+//        val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+//
+//        bottomNavigationView?.visibility = View.GONE
 
         val application = requireNotNull(this.activity).application
 
@@ -53,4 +65,13 @@ class LoginFragment : Fragment() {
 
         return binding.root
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        // Hide the bottom navigation view
+        val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView?.visibility = View.GONE
+    }
+
 }

@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
@@ -20,6 +21,8 @@ import com.example.midterm.MapService
 import com.example.midterm.R
 import com.example.midterm.database.PathDatabase
 import com.example.midterm.databinding.FragmentPathDetailBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationView
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -100,4 +103,16 @@ class PathDetailFragment : Fragment() {
         }
         return binding.root
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        // Hide the bottom navigation view
+        val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        bottomNavigationView?.visibility = View.VISIBLE
+
+//        val toolbar = activity?.findViewById<Toolbar>(R.id.app_bar)
+//        toolbar?.visibility = View.VISIBLE
+    }
+
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:enabled="true"
+        android:icon="@drawable/home"
+        android:title="Home"/>
+    <item
+        android:id="@+id/menu_add_path"
+        android:enabled="true"
+        android:icon="@drawable/add_circle"
+        android:title="Add Path"/>
+    <item
+        android:id="@+id/menu_view_path"
+        android:enabled="true"
+        android:icon="@drawable/dataset"
+        android:title="View Path"/>
+    <item
+        android:id="@+id/menu_about_us"
+        android:enabled="true"
+        android:icon="@drawable/groups"
+        android:title="About Us"/>
+    <item
+        android:id="@+id/menu_settings"
+        android:enabled="true"
+        android:icon="@drawable/settings"
+        android:title="Settings"/>
+</menu>
