@@ -5,7 +5,7 @@
     android:id="@+id/navHeader"
     android:layout_width="match_parent"
     android:layout_height="192dp"
-    android:background="#179C91"
+    android:background="#6D9886"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     >

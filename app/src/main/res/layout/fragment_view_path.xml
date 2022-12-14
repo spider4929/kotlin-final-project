@@ -26,21 +26,20 @@
         <Button
             android:id="@+id/btnviewexit"
             style="@style/Widget.Pathfinder.Button"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="52dp"
             android:layout_marginBottom="84dp"
             android:text="Back"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.541"
             app:layout_constraintStart_toEndOf="@+id/clear_button" />
 
         <Button
             android:id="@+id/clear_button"
             style="@style/Widget.Pathfinder.Button"
-            android:layout_width="wrap_content"
+            android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="32dp"
             android:layout_marginBottom="84dp"
             android:enabled="@{viewPathViewModel.clearButtonVisible}"
             android:onClick="@{() -> viewPathViewModel.onClear()}"
