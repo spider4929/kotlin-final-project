@@ -1,13 +1,16 @@
 package com.example.midterm
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toolbar
 import androidx.databinding.DataBindingUtil
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.midterm.databinding.FragmentHomeBinding
+import com.example.midterm.login.LoginActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -22,8 +25,12 @@ class HomeFragment : Fragment() {
             container,
             false
         )
+
         binding.homeexit.setOnClickListener { view : View ->
-            view.findNavController().navigate(R.id.action_homeFragment_to_loginFragment) }
+            startActivity(Intent(activity, LoginActivity::class.java))
+            activity?.finish()
+        }
+
         binding.btnAddPath.setOnClickListener { view: View ->
             view.findNavController().navigate(R.id.action_homeFragment_to_createPathFragment)
         }
@@ -52,8 +59,5 @@ class HomeFragment : Fragment() {
         // Hide the bottom navigation view
         val bottomNavigationView = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView?.visibility = View.VISIBLE
-
-//        val toolbar = activity?.findViewById<Toolbar>(R.id.app_bar)
-//        toolbar?.visibility = View.VISIBLE
     }
 }
