@@ -7,11 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="colorPrimary">#F7F7F7</color>
-    <color name="colorAccent">#6D9886</color>
-    <color name="textColorPrimary">#393E46</color>
+    <color name="colorAccent">#008037</color>
+    <color name="colorPrimary">#7ed957</color>
+    <color name="textColorPrimary">#005223</color>
+    <color name="textColorSecondary">#FFFFFF</color>
     <color name="toolbarIconColor">#FFFFFF</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFFFF</color>
-    <color name="textInputOutlineColor">#6D9886</color>
+    <color name="textInputOutlineColor">#008037</color>
 </resources>

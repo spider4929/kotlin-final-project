@@ -7,8 +7,8 @@ import com.example.midterm.database.Path
 import com.example.midterm.database.PathDatabaseDao
 
 class PathDetailViewModel(
-        private val pathKey: Long = 0L,
-        dataSource: PathDatabaseDao) : ViewModel() {
+    private val pathKey: Long = 0L,
+    dataSource: PathDatabaseDao) : ViewModel() {
 
     val database = dataSource
 

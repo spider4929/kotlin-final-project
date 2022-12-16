@@ -12,94 +12,45 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".datagrid.PathDetailFragment">
+        tools:context=".datagrid.PathDetailFragment"
+        android:background="@drawable/recycler">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/ReturnButton"
-            style="@style/Widget.Pathfinder.Button"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="10dp"
-            android:onClick="@{() -> pathDetailViewModel.onClose()}"
-            android:text="Return"
-            app:layout_constraintStart_toEndOf="@+id/LoadButton"
-            app:layout_constraintTop_toBottomOf="@+id/EditButton" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/EditButton"
-            style="@style/Widget.Pathfinder.Button"
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="40dp"
-            android:onClick="@{() -> pathDetailViewModel.onEdit()}"
-            android:text="Edit"
-            app:layout_constraintStart_toEndOf="@+id/LoadButton"
-            app:layout_constraintTop_toBottomOf="@+id/path_string" />
-
-        <TextView
-            android:id="@+id/path_src"
-            android:layout_width="411dp"
-            android:layout_height="26dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginBottom="22dp"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.Pathfinder.Subtitle"
-            app:layout_constraintBottom_toTopOf="@+id/path_dest"
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="361dp"
+            android:layout_height="294dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:pathSrcString="@{pathDetailViewModel.path}"
-            tools:text="Source" />
-
-        <TextView
-            android:id="@+id/path_dest"
-            android:layout_width="411dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="28dp"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.Pathfinder.Subtitle"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/path_src"
-            app:pathDestString="@{pathDetailViewModel.path}"
-            tools:text="Destination" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView5"
+            app:srcCompat="@drawable/api" />
 
         <TextView
             android:id="@+id/path_description"
-            android:layout_width="352dp"
-            android:layout_height="48dp"
+            android:layout_width="336dp"
+            android:layout_height="65dp"
             android:layout_marginStart="31dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="28dp"
             android:gravity="center"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.Pathfinder.TextBody"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.Pathfinder.TextBody2"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/path_dest"
+            app:layout_constraintTop_toTopOf="@+id/imageView6"
             app:pathDescriptionString="@{pathDetailViewModel.path}"
             tools:text="Sample Description" />
 
         <TextView
             android:id="@+id/path_string"
-            android:layout_width="349dp"
-            android:layout_height="124dp"
-            android:layout_marginStart="34dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="28dp"
+            android:layout_width="336dp"
+            android:layout_height="132dp"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.Pathfinder.TextBody"
+            android:textAppearance="@style/TextAppearance.Pathfinder.TextBody2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/path_description"
@@ -107,20 +58,100 @@
             tools:text="Sample Text" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/LoadButton"
+            android:id="@+id/EditButton"
             style="@style/Widget.Pathfinder.Button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="265dp"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> pathDetailViewModel.onEdit()}"
+            android:text="Edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ReturnButton"
+            style="@style/Widget.Pathfinder.Button"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:onClick="@{() -> pathDetailViewModel.onClose()}"
+            android:text="Return"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/EditButton" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/LoadButton"
+            style="@style/Widget.Pathfinder.Button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
             android:text="Query API for Data"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/path_string"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/openButton"
+            style="@style/Widget.Pathfinder.Button"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:text="Open Directions"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LoadButton" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="371dp"
+            android:layout_height="82dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/detail" />
+
+        <TextView
+            android:id="@+id/path_src"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="16dp"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.Pathfinder.TextBody2"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/imageView5"
+            app:pathSrcString="@{pathDetailViewModel.path}"
+            tools:text="Source:\n test" />
+
+        <TextView
+            android:id="@+id/path_dest"
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="68dp"
+            android:layout_marginTop="16dp"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.Pathfinder.TextBody2"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/path_src"
+            app:layout_constraintTop_toTopOf="@+id/imageView5"
+            app:pathDestString="@{pathDetailViewModel.path}"
+            tools:text="Destination:\n test" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

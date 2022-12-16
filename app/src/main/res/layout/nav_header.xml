@@ -5,9 +5,31 @@
     android:id="@+id/navHeader"
     android:layout_width="match_parent"
     android:layout_height="192dp"
-    android:background="#6D9886"
+    android:background="@color/colorAccent"
     android:padding="16dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     >
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="190dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/pd_logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="8dp"
+        android:text="Find your way with peace of mind!"
+        android:textAlignment="textStart"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 </androidx.constraintlayout.widget.ConstraintLayout>
