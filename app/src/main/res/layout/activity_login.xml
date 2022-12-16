@@ -4,8 +4,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".login.LoginActivity">
 
-
-
     <data>
         <variable
             name="loginViewModel"
