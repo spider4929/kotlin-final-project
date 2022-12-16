@@ -37,20 +37,20 @@ fun TextView.setPathSrcDestString(item: Path?) {
 @BindingAdapter("pathSrcString")
 fun TextView.setPathSrcString(item: Path?) {
     item?.let {
-        text = "FROM: " + item.source
+        text = "From:\n" + item.source
     }
 }
 
 @BindingAdapter("pathDestString")
 fun TextView.setPathDestString(item: Path?) {
     item?.let {
-        text = "TO: " + item.destination
+        text = "To:\n" + item.destination
     }
 }
 
 @BindingAdapter("pathDescriptionString")
 fun TextView.setpathDescriptionString(item: Path?) {
     item?.let {
-        text = "Description: " + item.description
+        text = "Description:\n\t" + item.description
     }
 }

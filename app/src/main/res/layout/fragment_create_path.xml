@@ -13,32 +13,20 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/createConstraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <TextView
-            android:id="@+id/txtTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="PathFinder"
-            android:textAppearance="@style/TextAppearance.Pathfinder.Title"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:background="@drawable/recycler">
 
         <TextView
             android:id="@+id/addPath"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="40dp"
             android:text="Add Path"
             android:textAppearance="@style/TextAppearance.Pathfinder.Subtitle"
-            android:textSize="20sp"
+            android:textSize="36sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/entryTitle_Layout"
@@ -129,7 +117,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddPath"
             style="@style/Widget.Pathfinder.Button"
-            android:layout_width="140dp"
+            android:layout_width="336dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
@@ -143,13 +131,13 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnaddexit"
             style="@style/Widget.Pathfinder.Button"
-            android:layout_width="140dp"
+            android:layout_width="336dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="55dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="15dp"
             android:text="Back"
-            app:layout_constraintStart_toEndOf="@+id/btnAddPath"
-            app:layout_constraintTop_toBottomOf="@+id/entryDesc_Layout" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAddPath" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
