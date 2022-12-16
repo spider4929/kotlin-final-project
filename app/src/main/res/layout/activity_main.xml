@@ -38,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 app:menu="@menu/bottom_navigation_menu"
+                app:cardBackgroundColor="#C0F890"
                 android:visibility="gone"/>
 
         </RelativeLayout>
