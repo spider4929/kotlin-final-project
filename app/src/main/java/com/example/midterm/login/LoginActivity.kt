@@ -33,6 +33,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnReg.setOnClickListener { view: View ->
             startActivity(Intent(this,RegisterActivity::class.java))
+            finish()
         }
 
         loginViewModel.navigateToHome.observe(this, Observer {

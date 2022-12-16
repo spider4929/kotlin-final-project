@@ -28,6 +28,7 @@ class HomeFragment : Fragment() {
 
         binding.homeexit.setOnClickListener { view : View ->
             startActivity(Intent(activity, LoginActivity::class.java))
+            activity?.finish()
         }
 
         binding.btnAddPath.setOnClickListener { view: View ->
