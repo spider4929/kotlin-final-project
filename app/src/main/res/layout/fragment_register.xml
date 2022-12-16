@@ -13,18 +13,19 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/registerConstraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/register">
 
-        <TextView
-            android:id="@+id/txtTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:text="PathFinder"
-            android:textAppearance="@style/TextAppearance.Pathfinder.Title"
-            android:textSize="30sp"
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="308dp"
+            android:layout_height="123dp"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="42dp"
+            android:src="@drawable/pd_logo"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,7 +40,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/nameLayout"
@@ -47,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:hint="Type your name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -110,27 +111,43 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnRegister"
             style="@style/Widget.Pathfinder.Button"
-            android:layout_width="150dp"
+            android:layout_width="336dp"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
             android:onClick="@{()->registerViewModel.registerButton()}"
             android:text="Register"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
+
+        <TextView
+            android:id="@+id/txtAdvise3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="Already have an account? Login here"
+            android:textAppearance="@style/TextAppearance.Pathfinder.TextBody"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button"
             style="@style/Widget.Pathfinder.Button"
-            android:layout_width="120dp"
+            android:layout_width="336dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="68dp"
-            android:layout_marginTop="36dp"
-            android:text="Return"
-            app:layout_constraintStart_toEndOf="@+id/btnRegister"
-            app:layout_constraintTop_toBottomOf="@+id/passwordLayout" />
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="25dp"
+            android:text="Back to Login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAdvise3" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -23,7 +23,7 @@ fun TextView.setPathString(item: Path?) {
 @BindingAdapter("mapImage")
 fun ImageView.setMapImage(item: Path?){
     item?.let {
-        setImageResource(R.drawable.map_icon)
+        setImageResource(R.drawable.pin)
     }
 }
 

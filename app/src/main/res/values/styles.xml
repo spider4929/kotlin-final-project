@@ -11,7 +11,7 @@
 
     <style name="Widget.Pathfinder.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextAppearance">@style/TextAppearance.Pathfinder.TextInputLayout.HintText</item>
-        <item name="hintTextColor">@color/textColorPrimary</item>
+        <item name="hintTextColor">@color/colorAccent</item>
         <item name="android:paddingBottom">8dp</item>
         <item name="boxStrokeColor">@color/textInputOutlineColor</item>
     </style>
@@ -19,13 +19,13 @@
     <style name="TextAppearance.Pathfinder.Title" parent="TextAppearance.MaterialComponents.Headline4">
         <item name="textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColor">?android:attr/colorAccent</item>
     </style>
 
     <style name="TextAppearance.Pathfinder.Subtitle" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColor">?android:attr/colorAccent</item>
     </style>
 
     <style name="TextAppearance.Pathfinder.TextBody" parent="TextAppearance.MaterialComponents.Body1">
@@ -41,12 +41,12 @@
     </style>
 
     <style name="Widget.Pathfinder.Button" parent="Widget.MaterialComponents.Button">
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColor">?android:attr/colorSecondary</item>
         <item name="backgroundTint">?attr/colorAccent</item>
     </style>
 
     <style name="Widget.Pathfinder.Button.TextButton" parent="Widget.MaterialComponents.Button.TextButton">
-        <item name="android:textColor">?android:attr/textColorPrimary</item>
+        <item name="android:textColor">?android:attr/colorSecondary</item>
     </style>
 
     <style name="Widget.Pathfinder.Toolbar" parent="Widget.AppCompat.Toolbar">
