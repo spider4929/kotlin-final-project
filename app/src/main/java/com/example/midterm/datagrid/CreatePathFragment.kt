@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import android.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
@@ -42,16 +43,19 @@ class CreatePathFragment : Fragment() {
             ViewModelProvider(
                 this, viewModelFactory).get(CreatePathViewModel::class.java)
 
-//        createPathViewModel.navigateToViewPath.observe(viewLifecycleOwner, Observer {
-//            this.findNavController().navigate(
-//                R.id.action_createPathFragment_to_viewPathFragment
-//            )
-//            createPathViewModel.doneNavigating()
-//        })
+        createPathViewModel._error.observe(viewLifecycleOwner, Observer { message ->
+            Toast.makeText(activity?.applicationContext, message, Toast.LENGTH_SHORT).show()
+        })
+
+        createPathViewModel._success.observe(viewLifecycleOwner, Observer { message ->
+            Toast.makeText(activity?.applicationContext, message, Toast.LENGTH_SHORT).show()
+        })
 
         binding.createPathViewModel = createPathViewModel
 
         binding.setLifecycleOwner(this)
+
+
 
         return binding.root
     }
