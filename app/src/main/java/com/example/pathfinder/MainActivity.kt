@@ -1,5 +1,6 @@
 package com.example.pathfinder
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
@@ -8,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.pathfinder.databinding.ActivityMainBinding
+import com.example.pathfinder.login.LoginActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 
@@ -42,7 +44,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.settingsFragment -> {
                     navController.navigate(R.id.settingsFragment)
                 }
-
             }
             true
         }

@@ -30,6 +30,7 @@
             tools:srcCompat="@drawable/pin"
             app:mapImage="@{path}"
             />
+
         <TextView
             android:id="@+id/path_string"
             android:layout_width="0dp"
@@ -42,8 +43,7 @@
             app:layout_constraintStart_toEndOf="@+id/path_image"
             app:layout_constraintTop_toTopOf="@+id/path_image"
             tools:text="Path Title"
-            app:pathString="@{path}"
-            />
+            app:pathString="@{path}" />
 
         <TextView
             android:id="@+id/path_sourcedest"
@@ -58,6 +58,8 @@
             app:pathSrcDestString="@{path}"
             tools:layout_editor_absoluteX="88dp"
             tools:text="Source and Destination" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

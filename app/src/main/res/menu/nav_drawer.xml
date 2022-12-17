@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-            <item
-                android:id="@+id/homeFragment"
-                android:icon="@drawable/home"
-                android:title="Home" />
-            <item
-                android:id="@+id/createPathFragment"
-                android:icon="@drawable/add_circle"
-                android:title="Create Path" />
-            <item
-                android:id="@+id/viewPathFragment"
-                android:icon="@drawable/dataset"
-                android:title="View Path" />
-            <item
-                android:id="@+id/aboutFragment"
-                android:icon="@drawable/groups"
-                android:title="About" />
-            <item
-                android:id="@+id/settingsFragment"
-                android:icon="@drawable/settings"
-                android:title="Settings" />
+        <item
+            android:title="Navigation"
+            style="style@TextAppearance.Pathfinder.Title"
+            >
+                <menu>
+                        <item
+                            android:id="@+id/homeFragment"
+                            android:icon="@drawable/home"
+                            android:title="Home" />
+                        <item
+                            android:id="@+id/createPathFragment"
+                            android:icon="@drawable/add_circle"
+                            android:title="Create Path" />
+                        <item
+                            android:id="@+id/viewPathFragment"
+                            android:icon="@drawable/dataset"
+                            android:title="View Path" />
+                        <item
+                            android:id="@+id/aboutFragment"
+                            android:icon="@drawable/groups"
+                            android:title="About" />
+                        <item
+                            android:id="@+id/settingsFragment"
+                            android:icon="@drawable/settings"
+                            android:title="Settings" />
+                </menu>
 
+        </item>
 </menu>

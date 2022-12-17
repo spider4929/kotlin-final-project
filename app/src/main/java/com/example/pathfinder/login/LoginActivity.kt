@@ -22,18 +22,12 @@ class LoginActivity : AppCompatActivity() {
         val binding = DataBindingUtil.setContentView<ActivityLoginBinding>(this,R.layout.activity_login)
 
         val application = requireNotNull(this).application
-
         val dataSource = UserDatabase.getInstance(application).userDatabaseDao
-
         val viewModelFactory = LoginViewModelFactory(dataSource, application)
-
-        val loginViewModel =
-            ViewModelProvider(
-                this, viewModelFactory).get(LoginViewModel::class.java)
+        val loginViewModel = ViewModelProvider(this, viewModelFactory).get(LoginViewModel::class.java)
 
         binding.btnReg.setOnClickListener { view: View ->
             startActivity(Intent(this,RegisterActivity::class.java))
-            finish()
         }
 
         loginViewModel.navigateToHome.observe(this, Observer {
