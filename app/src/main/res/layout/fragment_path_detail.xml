@@ -6,7 +6,7 @@
     <data>
         <variable
             name="pathDetailViewModel"
-            type="com.example.midterm.datagrid.PathDetailViewModel" />
+            type="com.example.pathfinder.datagrid.PathDetailViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

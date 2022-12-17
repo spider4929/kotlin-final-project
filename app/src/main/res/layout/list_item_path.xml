@@ -6,10 +6,10 @@
     <data>
         <variable
             name="path"
-            type="com.example.midterm.database.Path" />
+            type="com.example.pathfinder.database.Path" />
         <variable
             name="clickListener"
-            type="com.example.midterm.datagrid.PathListener" />
+            type="com.example.pathfinder.datagrid.PathListener" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

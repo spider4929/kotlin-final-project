@@ -7,7 +7,7 @@
     <data>
         <variable
             name="registerViewModel"
-            type="com.example.midterm.register.RegisterViewModel" />
+            type="com.example.pathfinder.register.RegisterViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

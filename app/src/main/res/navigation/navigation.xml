@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.midterm.HomeFragment"
+        android:name="com.example.pathfinder.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home">
         <action
@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewPathFragment"
-        android:name="com.example.midterm.datagrid.ViewPathFragment"
+        android:name="com.example.pathfinder.datagrid.ViewPathFragment"
         android:label="View Path"
         tools:layout="@layout/fragment_view_path">
         <action
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/createPathFragment"
-        android:name="com.example.midterm.datagrid.CreatePathFragment"
+        android:name="com.example.pathfinder.datagrid.CreatePathFragment"
         android:label="Create Path"
         tools:layout="@layout/fragment_create_path">
         <action
@@ -50,17 +50,17 @@
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.midterm.AboutFragment"
+        android:name="com.example.pathfinder.AboutFragment"
         android:label="About"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.midterm.SettingsFragment"
+        android:name="com.example.pathfinder.SettingsFragment"
         android:label="Settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/pathDetailFragment"
-        android:name="com.example.midterm.datagrid.PathDetailFragment"
+        android:name="com.example.pathfinder.datagrid.PathDetailFragment"
         android:label="Path Detail">
         <action
             android:id="@+id/action_pathDetailFragment_to_viewPathFragment"
@@ -74,7 +74,7 @@
     </fragment>
     <fragment
         android:id="@+id/editPathFragment"
-        android:name="com.example.midterm.datagrid.EditPathFragment"
+        android:name="com.example.pathfinder.datagrid.EditPathFragment"
         android:label="Edit Path"
         tools:layout="@layout/fragment_edit_path">
         <argument
@@ -86,6 +86,6 @@
     </fragment>
     <activity
         android:id="@+id/loginActivity"
-        android:name="com.example.midterm.login.LoginActivity"
+        android:name="com.example.pathfinder.login.LoginActivity"
         android:label="LoginActivity" />
 </navigation>

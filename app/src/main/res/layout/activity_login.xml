@@ -7,7 +7,7 @@
     <data>
         <variable
             name="loginViewModel"
-            type="com.example.midterm.login.LoginViewModel" />
+            type="com.example.pathfinder.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

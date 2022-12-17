@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.midterm.datagrid.EditPathFragment">
+    tools:context="com.example.pathfinder.datagrid.EditPathFragment">
 
     <data>
         <variable
             name="editPathViewModel"
-            type="com.example.midterm.datagrid.EditPathViewModel" />
+            type="com.example.pathfinder.datagrid.EditPathViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
