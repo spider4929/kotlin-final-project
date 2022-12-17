@@ -37,6 +37,8 @@ class EditPathViewModel(private val pathKey: Long = 0L, dataSource: PathDatabase
     val navigatetoViewPath: LiveData<Boolean>
         get() = _navigateToViewPath
 
+
+
     @SuppressLint("NullSafeMutableLiveData")
     fun doneNavigating() {
         _navigateToViewPath.postValue(null)

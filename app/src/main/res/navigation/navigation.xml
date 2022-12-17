@@ -56,7 +56,7 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.pathfinder.SettingsFragment"
-        android:label="Settings"
+        android:label="FAQ"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/pathDetailFragment"

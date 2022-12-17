@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.menu_add_path -> navController.navigate(R.id.createPathFragment)
                 R.id.menu_view_path -> navController.navigate(R.id.viewPathFragment)
                 R.id.menu_about_us -> navController.navigate(R.id.aboutFragment)
-                R.id.menu_settings -> navController.navigate(R.id.settingsFragment)
+                R.id.menu_faq -> navController.navigate(R.id.settingsFragment)
             }
             true
         }

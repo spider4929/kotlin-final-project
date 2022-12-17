@@ -23,8 +23,8 @@
                             android:title="About" />
                         <item
                             android:id="@+id/settingsFragment"
-                            android:icon="@drawable/settings"
-                            android:title="Settings" />
+                            android:icon="@drawable/faq"
+                            android:title="FAQ" />
                 </menu>
 
         </item>

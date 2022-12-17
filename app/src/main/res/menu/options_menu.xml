@@ -7,5 +7,5 @@
         android:title="About" />
     <item
         android:id="@+id/settingsFragment"
-        android:title="Settings" />
+        android:title="FAQ" />
 </menu>
