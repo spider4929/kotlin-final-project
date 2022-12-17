@@ -55,7 +55,7 @@ class EditPathFragment : Fragment() {
                 editPathViewModel.doneNavigating()
             }
         })
-        editPathViewModel.setData()
+
 
         return binding.root
     }

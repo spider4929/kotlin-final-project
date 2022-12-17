@@ -26,8 +26,8 @@ interface PathDatabaseDao {
     @Query("DELETE FROM path_table")
     suspend fun clear()
 
-//    @Query("DELETE FROM path_table WHERE pathId = :key")
-//    suspend fun deleteOne(key: Long)
+    @Query("DELETE FROM path_table WHERE pathId = :key")
+    suspend fun deleteOne(key: Long)
 
     @Query("UPDATE path_table SET title = :title, source = :source, destination = :destination, description = :description WHERE pathId = :key")
     fun update(key: Long, title: String, source: String, destination: String, description: String)

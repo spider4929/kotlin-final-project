@@ -1,6 +1,7 @@
 package com.example.pathfinder.datagrid
 
 import android.annotation.SuppressLint
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -31,14 +32,6 @@ class EditPathViewModel(private val pathKey: Long = 0L, dataSource: PathDatabase
     }
 
     val pathValue = getPath().value
-    fun setData(){
-        if (pathValue != null){
-            inputTitle.postValue(pathValue.title)
-            inputSource.postValue(pathValue.source)
-            inputDestination.postValue(pathValue.destination)
-            inputDesc.postValue(pathValue.description)
-        }
-    }
     val _navigateToViewPath = MutableLiveData<Boolean>()
 
     val navigatetoViewPath: LiveData<Boolean>
@@ -48,7 +41,13 @@ class EditPathViewModel(private val pathKey: Long = 0L, dataSource: PathDatabase
     fun doneNavigating() {
         _navigateToViewPath.postValue(null)
     }
-
+    fun onDelete() {
+        CoroutineScope(Dispatchers.IO).launch {
+            database.deleteOne(pathKey)
+            _success.postValue("Path deleted successfully!")
+            _navigateToViewPath.postValue(true)
+        }
+    }
     fun onClose() {
         _navigateToViewPath.postValue(true)
     }
